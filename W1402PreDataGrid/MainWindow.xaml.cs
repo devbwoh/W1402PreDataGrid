@@ -34,7 +34,13 @@ namespace W1402PreDataGrid
 
         private void OnAdd(object sender, RoutedEventArgs e)
         {
-            GundamList.Add(new Gundam("건탱크", "RX-75-4", "연방군"));
+            //GundamList.Add(new Gundam("건탱크", "RX-75-4", "연방군"));
+
+            GundamWin g = new GundamWin();
+            if (g.ShowDialog() != true)
+                return;
+
+            GundamList.Add(new Gundam(g.MSName, g.MSModel, g.MSParty));
         }
     }
 }
