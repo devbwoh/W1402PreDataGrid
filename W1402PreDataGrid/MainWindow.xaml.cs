@@ -42,5 +42,14 @@ namespace W1402PreDataGrid
 
             GundamList.Add(new Gundam(g.MSName, g.MSModel, g.MSParty));
         }
+
+        private void OnChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Gundam g = (Gundam)Grid.SelectedItem;
+
+            BitmapImage b = new BitmapImage(new Uri($"images/{g.Name}.jpg",
+                UriKind.RelativeOrAbsolute));
+            Image.Source = b;
+        }
     }
 }
