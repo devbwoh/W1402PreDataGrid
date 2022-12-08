@@ -23,10 +23,8 @@ namespace W1402PreDataGrid
             Party = party;
         }
     }
-    class GundamViewModel : INotifyPropertyChanged
+    class GundamViewModel
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
         ObservableCollection<Gundam> _list = new ObservableCollection<Gundam>();
         public ObservableCollection<Gundam> List
         {
